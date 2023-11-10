@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Sacramento&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  
+}
+
+
+h1 {
+    font-size: calc(20px + 18vh);
+    line-height: calc(20px + 20vh);
+  /*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+    color: #fccaff; */
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+      color: #fff6a9;
+    font-family: "Sacramento", cursive;
+    text-align: center;
+    animation: blink 12s infinite;
+    -webkit-animation: blink 12s infinite;
+  }
+  
+  .background {
+    width: 100%;
+    height: 100vh;
+    background-image: url(image/downloadfutbol.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+    
+  }
+
+  
+
+  .skor{
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    margin-bottom: 50px;
+  }
+  
+  @-webkit-keyframes blink {
+    20%,
+    24%,
+    55% {
+      color: #111;
+      text-shadow: none;
+    }
+  
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+  /*     color: #fccaff;
+      text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+        0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+      color: #fff6a9;
+    }
+  }
+  
+  @keyframes blink {
+    20%,
+    24%,
+    55% {
+      color: #111;
+      text-shadow: none;
+    }
+  
+    0%,
+    19%,
+    21%,
+    23%,
+    25%,
+    54%,
+    56%,
+    100% {
+  /*     color: #fccaff;
+      text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+        0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+    text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+      color: #fff6a9;
+    }
+  }
+  
+.teams{
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff6a9;
+  text-shadow: 2px 2px 4px #ffa500;
+}
+
+.number {
+    width: 130px;
+    height: 60px;
+    background-color: #F9B572;
+    font-size: 1.8rem;
+}
+
+.aritmetic{
+  font-size: 1.5rem;
+}
+
+.btnName{
+ 
+  background-color: #99B080;
+}
+
+.btnScore{
+  background-color: #F9F3CC;
+}
+
+
+.inputA {
+ 
+  border-radius: 5px;
+ margin-left: -60px;
+
+}
+
+.inputB {
+  
+  border-radius: 5px;
+  margin-left: 100px;
+
+}
+
+
+.ballcontainer{
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ball{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, #fefefe, #00a3d5, #F9B572);
+  border-radius: 50%;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+
+.ball::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 70%;
+  background: #1e1d1d;
+  opacity: 0.3;
+  filter: blur(12px);
+  animation: shadow 1.5s ease-in infinite;
+
+}
+
+@keyframes bounce {
+  0%, 100%{
+    top: -120px
+  }
+  50%{
+    top: 100px
+  }
+}
+
+@keyframes shadow {
+  0%, 100% {
+    top: 550px;
+    width: 240px;
+    height: 60px;
+  }
+  50%{
+    top: 220px;
+    width: 80px;
+    height: 60px;
+  }
+}
