@@ -20,16 +20,14 @@ let newScoreB = document.querySelector('.newScoreB')
 decrementButtonA.addEventListener('click', decreamentA);  //- butona tıkladığımızda çalışacak fonksiyon ismi
 incrementButtonA.addEventListener('click', increamentA);  // + butona tıkladığımızda çalışacak fonksiyon ismi
 
-function decreamentA(){
-    --valueA;
-    countA.innerHTML = valueA;   
-    if (valueA <= 0) {
-      countA.innerHTML = 0;
-      } else {
-        countA.innerHTML = valueA
-      }
-   
+function decreamentA() {
+  --valueA;
+  if (valueA < 0) {
+      valueA = 0;
+  }
+  countA.innerHTML = valueA;
 }
+
 
 function increamentA(){
     ++valueA;
@@ -41,14 +39,12 @@ function increamentA(){
 decrementButtonB.addEventListener('click', decreamentB);  //- butona tıkladığımızda çalışacak fonksiyon ismi
 incrementButtonB.addEventListener('click', increamentB);  // + butona tıkladığımızda çalışacak fonksiyon ismi
 
-function decreamentB(){
-    --valueB;
-    countB.innerHTML = valueB;   
-    if (valueB <= 0) {
-    countB.innerHTML = 0;
-    } else {
-      countB.innerHTML = valueB
-    }
+function decreamentB() {
+  --valueB;
+  if (valueB < 0) {
+      valueB = 0;
+  }
+  countB.innerHTML = valueB;
 }
 
 function increamentB(){
@@ -115,9 +111,9 @@ newScoreA.addEventListener('click', () => {
                   alert('Pozitif bir değer giriniz');
                   e.target.value = "";
               } else {
-                  valueA = inputNumberDomA.value;
-                  countA.innerHTML = inputNumberDomA.value;
-                  inputNumberDomA.style.display = 'none';
+                valueA = Math.max(0, inputNumberDomA.value);
+                countA.innerHTML = valueA;
+                inputNumberDomA.style.display = 'none';
               }
           }
       });
@@ -140,9 +136,9 @@ newScoreB.addEventListener('click', () => {
                   alert('Pozitif bir değer giriniz');
                   e.target.value = "";
               } else {
-                  valueB = inputNumberDomB.value;
-                  countB.innerHTML = inputNumberDomB.value;
-                  inputNumberDomB.style.display = 'none';
+                valueB = Math.max(0, inputNumberDomB.value);
+                countB.innerHTML = valueB;
+                inputNumberDomB.style.display = 'none';
               }
           }
       });
