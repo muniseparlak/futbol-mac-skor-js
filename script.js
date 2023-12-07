@@ -107,7 +107,7 @@ newScoreA.addEventListener('click', () => {
 
       inputNumberDomA.addEventListener("keypress", (e) => {
           if (e.key === "Enter") {
-              if (e.target.value < 0) {
+              if (e.target.value < 0 || e.target.value === "-0") {
                   alert('Pozitif bir değer giriniz');
                   e.target.value = "";
               } else {
@@ -132,7 +132,7 @@ newScoreB.addEventListener('click', () => {
 
       inputNumberDomB.addEventListener("keypress", (e) => {
           if (e.key === "Enter") {
-              if (e.target.value < 0) {
+              if (e.target.value < 0 || e.target.value === "-0") {
                   alert('Pozitif bir değer giriniz');
                   e.target.value = "";
               } else {
