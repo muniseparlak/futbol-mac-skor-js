@@ -61,96 +61,94 @@ function increamentB(){
 // takım adını değiştir A butonu seçiyoruz
 let changeTeamA = document.querySelector('.teamNameA')   
 
-changeTeamA.addEventListener('click', () => {   // A takımını değiştirmek için butona tıkladığımızdaki fonksiyon
-    let inputDomA = document.createElement('input')   // yeni input oluşturuyoruz
-      document.querySelector('.inputA').appendChild(inputDomA)  // bu input u div e yerleştiriyoruz
-      inputDomA.type="text";
-      inputDomA.name="nameAteam";
-      inputDomA.placeholder= "Yeni takım adını giriniz";
-     
-      inputDomA.addEventListener("keypress", (e) => {  // input a enter olduğunda gerçekleşecek fonk
-        if (e.key === "Enter") {
-          teamNewNameA.innerHTML = inputDomA.value  // A takımı yazan yeri input daki value ile değiştiriryoruz
-          inputDomA.style.display='none';  // en son input u görünmez yap
+changeTeamA.addEventListener('click', () => {
+  // Eğer zaten bir input varsa yeni bir input eklenmez
+  if (!document.querySelector('.inputA input')) {
+      let inputDomA = document.createElement('input');
+      document.querySelector('.inputA').appendChild(inputDomA);
+      inputDomA.type = "text";
+      inputDomA.name = "nameAteam";
+      inputDomA.placeholder = "Yeni takım adını giriniz";
 
-
-        }
+      inputDomA.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") {
+              teamNewNameA.innerHTML = inputDomA.value;
+              inputDomA.style.display = 'none';
+          }
       });
-
-      
-})
+  }
+});
 
 // takım adını değiştir B butonu seçiyoruz
 let changeTeamB = document.querySelector('.teamNameB') 
+changeTeamB.addEventListener('click', () => {
+  // Eğer zaten bir input varsa yeni bir input eklenmez
+  if (!document.querySelector('.inputB input')) {
+      let inputDomB = document.createElement('input');
+      document.querySelector('.inputB').appendChild(inputDomB);
+      inputDomB.type = "text";
+      inputDomB.name = "nameBteam";
+      inputDomB.placeholder = "Yeni takım adını giriniz";
 
-
-changeTeamB.addEventListener('click', () => {   // B takımını değiştirmek için butona tıkladığımızdaki fonksiyon
-    let inputDomB = document.createElement('input')   // yeni input oluşturuyoruz
-      document.querySelector('.inputB').appendChild(inputDomB)  // bu input u div e yerleştiriyoruz
-      inputDomB.type="text";
-      inputDomB.name="nameBteam";
-      inputDomB.placeholder= "Yeni takım adını giriniz";
-     
-      inputDomB.addEventListener("keypress", (e) => {  // input a enter olduğunda gerçekleşecek fonk
-        if (e.key === "Enter") {
-          teamNewNameB.innerHTML = inputDomB.value  // B takımı yazan yeri input daki value ile değiştiriryoruz
-          inputDomB.style.display='none';  // en son input u görünmez yap
-           
-        }
+      inputDomB.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") {
+              teamNewNameB.innerHTML = inputDomB.value;
+              inputDomB.style.display = 'none';
+          }
       });
-
-      
-})  
+  }
+});  
 
 // A takımı için score değiştir butonunu tanımlıyoruz
 newScoreA.addEventListener('click', () => {
-  let inputNumberDomA = document.createElement('input')   // yeni input oluşturuyoruz
-  document.querySelector('.inputNumberA').appendChild(inputNumberDomA)  // bu input u div e yerleştiriyoruz
-  inputNumberDomA.type="number";
-  inputNumberDomA.name="nameBscore";
-  inputNumberDomA.placeholder= "Yeni skoru giriniz";
- 
-  inputNumberDomA.addEventListener("keypress", (e) => {  // input a enter olduğunda gerçekleşecek fonk
-    if (e.key === "Enter") {
+  // Eğer zaten bir input varsa yeni bir input eklenmez
+  if (!document.querySelector('.inputNumberA input')) {
+      let inputNumberDomA = document.createElement('input');
+      document.querySelector('.inputNumberA').appendChild(inputNumberDomA);
+      inputNumberDomA.type = "number";
+      inputNumberDomA.name = "nameBscore";
+      inputNumberDomA.placeholder = "Yeni skoru giriniz";
 
-      if(e.target.value < 0 ){
-    alert('Pozitif bir değer giriniz')
-    e.target.value = ""
-  }else{
-      valueA = inputNumberDomA.value
-      countA.innerHTML = inputNumberDomA.value  // B takımı yazan yeri input daki value ile değiştiriryoruz
-      inputNumberDomA.style.display='none';  // en son input u görünmez yap
-  }   
-    }
-  });
-  
-})
-
+      inputNumberDomA.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") {
+              if (e.target.value < 0) {
+                  alert('Pozitif bir değer giriniz');
+                  e.target.value = "";
+              } else {
+                  valueA = inputNumberDomA.value;
+                  countA.innerHTML = inputNumberDomA.value;
+                  inputNumberDomA.style.display = 'none';
+              }
+          }
+      });
+  }
+});
 
 // B takımı için score değiştir butonunu tanımlıyoruz
 newScoreB.addEventListener('click', () => {
-  let inputNumberDomB = document.createElement('input')   // yeni input oluşturuyoruz
-  document.querySelector('.inputNumberB').appendChild(inputNumberDomB)  // bu input u div e yerleştiriyoruz
-  inputNumberDomB.type="number";
-  inputNumberDomB.name="nameBscore";
-  inputNumberDomB.placeholder= "Yeni skoru giriniz";
- 
- 
-  inputNumberDomB.addEventListener("keypress", (e) => {  // input a enter olduğunda gerçekleşecek fonk
-    if (e.key === "Enter") {
+  // Eğer zaten bir input varsa yeni bir input eklenmez
+  if (!document.querySelector('.inputNumberB input')) {
+      let inputNumberDomB = document.createElement('input');
+      document.querySelector('.inputNumberB').appendChild(inputNumberDomB);
+      inputNumberDomB.type = "number";
+      inputNumberDomB.name = "nameBscore";
+      inputNumberDomB.placeholder = "Yeni skoru giriniz";
 
-       if(e.target.value < 0 ){
-    alert('Pozitif bir değer giriniz')
-    e.target.value = ""
-  }else{
-      valueB = inputNumberDomB.value
-      countB.innerHTML = inputNumberDomB.value  // B takımı yazan yeri input daki value ile değiştiriryoruz
-      inputNumberDomB.style.display='none';  // en son input u görünmez yap
-     }  
-    }
-  });
-  
-})
+      inputNumberDomB.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") {
+              if (e.target.value < 0) {
+                  alert('Pozitif bir değer giriniz');
+                  e.target.value = "";
+              } else {
+                  valueB = inputNumberDomB.value;
+                  countB.innerHTML = inputNumberDomB.value;
+                  inputNumberDomB.style.display = 'none';
+              }
+          }
+      });
+  }
+});
+
 
    
 
